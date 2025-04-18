@@ -28,11 +28,7 @@ namespace Raja.Presentation.Web.Controllers
                 return Ok(result);
             }
 
-            [HttpPost]
-            public async Task<IActionResult> Create(PersonelDto dto)
-            {
-                var id = await _personnelService.CreateAsync(dto);
-                return CreatedAtAction(nameof(GetById), new { id }, null);
-            }
+
         }
+    }
 }

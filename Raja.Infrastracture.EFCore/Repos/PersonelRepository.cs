@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Raja.Application.Contract.Dto;
+using Raja.Domain.Entities;
 using Raja.Infrastracture.EFCore.Context;
 
 namespace Raja.Infrastracture.EFCore.Repos
@@ -12,6 +13,34 @@ namespace Raja.Infrastracture.EFCore.Repos
         {
             this.context = context;
         }
+
+        public async Task<int> Add(PersonelDto personel)
+        {
+            var model = new Personel(personel.Name, personel.LastName);
+            context.Personels.Add(model);
+            await Save();
+            return model.Id;
+        }
+
+        public async Task Edit(PersonelDto personel, CancellationToken ct)
+        {
+            var model = await context.Personels.Where(x=> x.Id == personel.PersonelId).FirstOrDefaultAsync(ct);
+            model.Edit(personel.Name, personel.LastName);
+            await Save();
+        }
+
+        public async Task<PersonelDto> Get(int id, CancellationToken ct)
+        {
+            return await
+            context.Personels.Where(x=> x.Id == id).Select(x => new PersonelDto
+            {
+                PersonelId = id,
+                Name = x.Name,
+                LastName = x.LastName,
+            })
+            .FirstOrDefaultAsync(ct);
+        }
+
 
         public async Task<List<PersonelDto>> GetAll(CancellationToken ct)
         {
@@ -35,5 +64,17 @@ namespace Raja.Infrastracture.EFCore.Repos
                 return personels;
             }
         }
+
+        public async Task Remove(int id)
+        {
+            var model = await GetPersonel(id);
+            model.Remove();
+            await Save();
+
+        }
+
+        public async Task Save(CancellationToken ct = default) => await context.SaveChangesAsync(ct);
+        private async Task<Personel> GetPersonel(int id) => await context.Personels.FindAsync(id);
+
     }
 }
