@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Raja.Application.Contract\Raja.Application.Contract.csproj" />
+    <ProjectReference Include="..\Raja.Application\Raja.Application.csproj" />
+    <ProjectReference Include="..\Raja.Infrastracture.EFCore\Raja.Infrastracture.EFCore.csproj" />
+  </ItemGroup>
+
+</Project>

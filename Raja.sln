@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raja.Application", "Raja.Application\Raja.Application.csproj", "{D7D8B24D-98B1-469A-A7E3-1BE088D2F690}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raja.Application.Contract", "Raja.Application.Contract\Raja.Application.Contract.csproj", "{A03C833A-7F05-4B39-9F63-DAD5920116E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raja.Domain", "Raja.Domain\Raja.Domain.csproj", "{F0FFED09-1AA6-46EF-B5C1-376D63E179A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raja.Infrastracture", "Raja.Infrastructure\Raja.Infrastracture.csproj", "{63B7715F-B80A-4302-B5B2-C5B8DF12C949}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raja.Infrastracture.Configuratin", "Raja.Infrastructure.Configuratin\Raja.Infrastracture.Configuratin.csproj", "{2FBA70BA-3257-49F0-9494-16679198DFCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raja.Infrastracture.EFCore", "Raja.Infrastracture.EFCore\Raja.Infrastracture.EFCore.csproj", "{7EFB02AB-DE23-41CF-8D48-1B624831EE13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raja.Presentation.Web", "Raja.Presentation.Web\Raja.Presentation.Web.csproj", "{61AD52B1-BED8-4F3E-8BD1-EF0412C18FCE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7D8B24D-98B1-469A-A7E3-1BE088D2F690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7D8B24D-98B1-469A-A7E3-1BE088D2F690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7D8B24D-98B1-469A-A7E3-1BE088D2F690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7D8B24D-98B1-469A-A7E3-1BE088D2F690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A03C833A-7F05-4B39-9F63-DAD5920116E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A03C833A-7F05-4B39-9F63-DAD5920116E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A03C833A-7F05-4B39-9F63-DAD5920116E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A03C833A-7F05-4B39-9F63-DAD5920116E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0FFED09-1AA6-46EF-B5C1-376D63E179A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0FFED09-1AA6-46EF-B5C1-376D63E179A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0FFED09-1AA6-46EF-B5C1-376D63E179A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0FFED09-1AA6-46EF-B5C1-376D63E179A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63B7715F-B80A-4302-B5B2-C5B8DF12C949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63B7715F-B80A-4302-B5B2-C5B8DF12C949}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63B7715F-B80A-4302-B5B2-C5B8DF12C949}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63B7715F-B80A-4302-B5B2-C5B8DF12C949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FBA70BA-3257-49F0-9494-16679198DFCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FBA70BA-3257-49F0-9494-16679198DFCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FBA70BA-3257-49F0-9494-16679198DFCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FBA70BA-3257-49F0-9494-16679198DFCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EFB02AB-DE23-41CF-8D48-1B624831EE13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EFB02AB-DE23-41CF-8D48-1B624831EE13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EFB02AB-DE23-41CF-8D48-1B624831EE13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EFB02AB-DE23-41CF-8D48-1B624831EE13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61AD52B1-BED8-4F3E-8BD1-EF0412C18FCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61AD52B1-BED8-4F3E-8BD1-EF0412C18FCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61AD52B1-BED8-4F3E-8BD1-EF0412C18FCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61AD52B1-BED8-4F3E-8BD1-EF0412C18FCE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
