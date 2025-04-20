@@ -1,0 +1,136 @@
+﻿@model Raja.Application.Contract.Dto.PersonelDto
+
+
+@{
+    var list = ViewData["PersonelList"] as List<Raja.Application.Contract.Dto.PersonelDto>;
+    ViewData["Title"] = "پرسنل";
+}
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="PersonelId" />
+
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <hr />
+
+
+
+    <hr />
+    <h4>شماره موبایل‌ها</h4>
+    <div id="mobile-numbers-list">
+        @for (int i = 0; i < Model.MobileNumbers?.Count; i++)
+        {
+            <div class="mobile-number-item mb-2 input-group" data-id="@Model.MobileNumbers[i].Id">
+
+                <input name="MobileNumbers[@i].MobileNumber"
+                       value="@Model.MobileNumbers[i].MobileNumber"
+                       class="form-control" placeholder="شماره موبایل" />
+
+                <input type="hidden" name="MobileNumbers[@i].Id"
+                       value="@Model.MobileNumbers[i].Id" />
+
+                <button type="button" class="btn btn-danger" onclick="removeMobileField(this)">❌</button>
+            </div>
+        }
+    </div>
+
+    <button type="button" class="btn btn-success mb-3" onclick="addMobileField()">➕ افزودن شماره موبایل</button>
+
+
+
+
+    <div class="form-topper-btns">
+        <button type="submit" class="btn btn-success">
+
+            <text>ویرایش</text>
+
+        </button>
+    </div>
+</form>
+<hr />
+<h3 class="mt-4">لیست پرسنل ثبت‌شده</h3>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>نام</th>
+            <th>نام خانوادگی</th>
+            <th>شماره موبایل‌ها</th>
+            <th>عملیات</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in list)
+        {
+            <tr>
+                <td>@person.Name</td>
+                <td>@person.LastName</td>
+                <td>
+                    @foreach (var mobile in person.MobileNumbers)
+                    {
+                        <div>@mobile.MobileNumber</div>
+                    }
+                </td>
+                <td>
+                    <a asp-action="Detail" asp-route-id="@person.PersonelId" class="btn btn-warning btn-sm">✏ ویرایش</a>
+                    <form asp-action="Remove" asp-route-id="@person.PersonelId" method="post" style="display:inline" onsubmit="return confirm('مطمئنی؟');">
+                        <button type="submit" class="btn btn-danger btn-sm">🗑 حذف</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        let mobileIndex = @Model.MobileNumbers?.Count ?? 1;
+
+        function addMobileField() {
+            const container = document.getElementById("mobile-numbers-list");
+            const div = document.createElement("div");
+            div.classList.add("mobile-number-item", "mb-2", "input-group");
+
+            div.innerHTML = `
+                <input name="MobileNumbers[${mobileIndex}].MobileNumber" class="form-control" placeholder="شماره موبایل" />
+                <button type="button" class="btn btn-danger" onclick="removeMobileField(this)">❌</button>
+            `;
+
+            container.appendChild(div);
+            mobileIndex++;
+        }
+
+                function removeMobileField(btn) {
+                   debugger;
+            const wrapper = btn.closest(".mobile-number-item");
+            const id = wrapper.getAttribute("data-id");
+
+            if (id && parseInt(id) > 0) {
+                fetch(`/Home/RemoveMobileNumber?id=${id}`, {
+                    method: 'POST'
+                })
+                .then(response => {
+                    if (!response.ok) throw new Error('خطا در حذف شماره موبایل از سرور');
+                    console.log('شماره موبایل حذف شد.');
+                })
+                .catch(error => {
+                    console.error('خطا:', error);
+                });
+            }
+
+            wrapper.remove();
+        }
+
+    </script>
+}
+

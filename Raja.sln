@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raja.Application", "Raja.Application\Raja.Application.csproj", "{D7D8B24D-98B1-469A-A7E3-1BE088D2F690}"
 EndProject
@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raja.Infrastracture.Configu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raja.Infrastracture.EFCore", "Raja.Infrastracture.EFCore\Raja.Infrastracture.EFCore.csproj", "{7EFB02AB-DE23-41CF-8D48-1B624831EE13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raja.Presentation.Web", "Raja.Presentation.Web\Raja.Presentation.Web.csproj", "{61AD52B1-BED8-4F3E-8BD1-EF0412C18FCE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raja.Persentation.Web", "Raja.Persentation.Web\Raja.Persentation.Web.csproj", "{583A57DF-1C96-4A94-A7C4-76355E2FE1D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +47,10 @@ Global
 		{7EFB02AB-DE23-41CF-8D48-1B624831EE13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EFB02AB-DE23-41CF-8D48-1B624831EE13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EFB02AB-DE23-41CF-8D48-1B624831EE13}.Release|Any CPU.Build.0 = Release|Any CPU
-		{61AD52B1-BED8-4F3E-8BD1-EF0412C18FCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{61AD52B1-BED8-4F3E-8BD1-EF0412C18FCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{61AD52B1-BED8-4F3E-8BD1-EF0412C18FCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{61AD52B1-BED8-4F3E-8BD1-EF0412C18FCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{583A57DF-1C96-4A94-A7C4-76355E2FE1D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{583A57DF-1C96-4A94-A7C4-76355E2FE1D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{583A57DF-1C96-4A94-A7C4-76355E2FE1D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{583A57DF-1C96-4A94-A7C4-76355E2FE1D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

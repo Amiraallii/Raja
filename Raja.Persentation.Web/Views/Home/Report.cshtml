@@ -1,0 +1,43 @@
+﻿@model List<Raja.Application.Contract.Dto.PersonelDto>
+
+@{
+    var list = ViewData["PersonelList"] as List<Raja.Application.Contract.Dto.PersonelDto>;
+
+    ViewData["Title"] = "گزارش پرسنل";
+}
+
+<h2 class="mb-4">📋 گزارش پرسنل</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>نام</th>
+            <th>نام خانوادگی</th>
+            <th>شماره موبایل‌ها</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in list)
+        {
+            <tr>
+                <td>@person.Name</td>
+                <td>@person.LastName</td>
+                <td>
+                    @if (person.MobileNumbers != null && person.MobileNumbers.Any())
+                    {
+                        <ul class="mb-0">
+                            @foreach (var mobile in person.MobileNumbers)
+                            {
+                                <li>@mobile.MobileNumber</li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <span class="text-muted">ندارد</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -32,13 +32,13 @@ namespace Raja.Infrastracture.Configuratin
             services.AddDbContext<RajaPersonelContext>(option =>
             {
                 option.UseSqlServer(connectionString,
-                    b => b.MigrationsAssembly("CharvandClub.Infrastructure.EFCore"));
+                    b => b.MigrationsAssembly("Raja.Infrastracture.EFCore"));
             });
         }
     }
 
     // Migration Config
-    public partial class CharvandConfiguration
+    public partial class RajaConfiguration
     {
         public static bool Migrate(IServiceProvider app)
         {

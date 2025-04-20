@@ -18,9 +18,19 @@ namespace Raja.Application.Services
             return await personelRepository.Add(personel);
         }
 
-        public  async Task Edit(PersonelDto personel, CancellationToken ct)
+        public async Task<int> AddPersoneDetail(PersonelDetailDto personelDetail)
         {
-            await personelRepository.Edit(personel, ct);
+            return await personelRepository.AddPersoneDetail(personelDetail);
+        }
+
+        public  async Task Edit(PersonelDto personelDetail, CancellationToken ct)
+        {
+            await personelRepository.Edit(personelDetail, ct);
+        }
+
+        public async Task EditPersonelDetail(PersonelDetailDto personelDetail, CancellationToken ct)
+        {
+            await personelRepository.EditPersonelDetail(personelDetail, ct);
         }
 
         public async Task<PersonelDto> Get(int id, CancellationToken ct)
@@ -34,14 +44,12 @@ namespace Raja.Application.Services
         public async Task<List<PersonelDto>> GetAll(CancellationToken ct)
            => await personelRepository.GetAll(ct);
 
-        public Task Remove(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task Remove(int id)
+            => await personelRepository.Remove(id);
 
-        public Task Save(CancellationToken ct = default)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task RemoveMobileNumber(int id)
+            => await personelRepository.RemoveMobileNumber(id);
+
+        
     }
 }
